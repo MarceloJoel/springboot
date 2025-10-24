@@ -15,7 +15,7 @@ public class EjemploController {
     public String info(Model model) {
 
         Empleados empleado1 = new Empleados("Juan","Rodriguez", "Calle 123", "Gerente",
-        35, 123456789,001);
+            35, 123456789,001);
         model.addAttribute("Empleado", empleado1);
         return "detalles_info";
 
