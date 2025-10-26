@@ -16,6 +16,7 @@ import com.proyectoinformatico.spring.springboot.models.Empleados;
 @RestController
 @RequestMapping("/api/variable")
 public class PathVariableController {
+
     @Value("${config.usuario}")
     private String usuario;
 
