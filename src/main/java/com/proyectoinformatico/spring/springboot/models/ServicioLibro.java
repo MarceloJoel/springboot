@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class ServicioLibro {
 
-    public String buscaLibro(String titulo){
-        if("El quijote".equalsIgnoreCase(titulo)){
+    public String buscaLibro(String titulo) {
+        if ("El quijote".equalsIgnoreCase(titulo)) {
             return "Libro encontrado!";
-        }else{
+        } else {
             return "Libro no encontrado";
         }
     }

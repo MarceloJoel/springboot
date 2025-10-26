@@ -11,15 +11,15 @@ import com.proyectoinformatico.spring.springboot.models.ServicioLibro;
 @RequestMapping("/api/libros")
 
 public class ControladorLibreria {
-    
-    private final ServicioLibro libroServicio;
 
-    public ControladorLibreria(ServicioLibro libroServicio){
+    private final ServicioLibro libroServicio; //final no puede cambiar de estado
+
+    public ControladorLibreria(ServicioLibro libroServicio) {
         this.libroServicio = libroServicio;
     }
 
-    @GetMapping("/{titulo}")
-    public String DameLibro(@PathVariable String titulo){
+    @GetMapping("/{titulo}") //No hay setters
+    public String DameLibro(@PathVariable String titulo) {
         return libroServicio.buscaLibro(titulo);
     }
 
