@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.proyectoinformatico.spring.springboot.models.Libros;
-import com.proyectoinformatico.spring.springboot.models.ServicioLibro;
 import com.proyectoinformatico.spring.springboot.repoLibros.RepoLibros;
+import com.proyectoinformatico.spring.springboot.servicios.ServicioLibro;
 
 @RestController
 @RequestMapping("/api/libros")

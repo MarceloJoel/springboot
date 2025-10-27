@@ -1,4 +1,4 @@
-package com.proyectoinformatico.spring.springboot.models;
+package com.proyectoinformatico.spring.springboot.servicios;
 
 import org.springframework.stereotype.Service;
 
