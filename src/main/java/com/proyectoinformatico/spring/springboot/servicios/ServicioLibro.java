@@ -3,6 +3,7 @@ package com.proyectoinformatico.spring.springboot.servicios;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.proyectoinformatico.spring.springboot.models.Libros;
@@ -21,6 +22,7 @@ public class ServicioLibro implements I_ServicioLibro {
 
     private final I_RepoLibros i_repo;
 
+    @Autowired // Aqui lo conecta de forma automatica !Lo crea po si solo¡
     public ServicioLibro(I_RepoLibros i_repo) {
         this.i_repo = i_repo;
     }
