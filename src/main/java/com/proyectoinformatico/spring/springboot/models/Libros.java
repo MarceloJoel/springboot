@@ -2,7 +2,7 @@ package com.proyectoinformatico.spring.springboot.models;
 
 import java.time.LocalDate;
 
-public class Libros {
+public class Libros implements Cloneable {
     private long idLibro;
     private String autor;
     private String titulo;
@@ -35,18 +35,37 @@ public class Libros {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+    // public void setTitulo(String titulo) {
+    // this.titulo = titulo;
+    // }
 
     public LocalDate getFechaPublicacion() {
         return fechaPublicacion;
     }
 
-    public void setFechaPublicacion(LocalDate fechaPublicacion) {
-        this.fechaPublicacion = fechaPublicacion;
+    @Override
+    public Libros clone() {
+        try {
+            return (Libros) super.clone();
+        } catch (CloneNotSupportedException ERROR) {
+            throw new AssertionError();
+        }
     }
 
-    
+    @Override
+    public String toString() {
+        return "Libros: {" +
+                " Id = " + idLibro + ", titulo = " + titulo + 
+                ", autor = " + autor + '\'' +
+                ", fecha publicacion = " + fechaPublicacion + '}';
+    }
+
+    public void setId(int idLibro) {
+
+    }
+
+    public void setTitulo(String autor) {
+
+    }
 
 }

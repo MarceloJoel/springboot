@@ -1,5 +1,6 @@
 package com.proyectoinformatico.spring.springboot.controllers;
 
+import java.time.LocalDate;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -11,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.proyectoinformatico.spring.springboot.models.Libros;
 import com.proyectoinformatico.spring.springboot.repoLibros.RepoLibros;
 import com.proyectoinformatico.spring.springboot.servicios.ServicioLibro;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/api/libros")
@@ -40,6 +43,15 @@ public class ControladorLibreria {
         return libroRepositorio.buscaId(id)
         .map(ResponseEntity::ok)
         .orElse(ResponseEntity.notFound().build());
+    }
+    
+    @GetMapping("/clone")
+    public String probarCLone(){
+        Libros original = new Libros(1L,"Miguel de Cervantes", "El Quijote", LocalDate.of(1605, 1, 16));
+        Libros copia = original.clone();
+
+        return "Original: " + original.toString() +
+                "   | Copia: " + copia.toString(); 
     }
     
     
